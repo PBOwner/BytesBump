@@ -23,7 +23,6 @@ class Info(commands.Cog):
         .add_field(name="Latency", value=f"{round(self.bot.latency*1000)}ms")
         .add_field(name="Servers", value=len(self.bot.guilds))
         .add_field(name="Active Servers", value=len([i for i in Servers().get_all()]))
-        .add_field(name="Open Source", value="[View](https://github.com/Nemika-Haj/BytesBump)") # DO NOT REMOVE
         .set_footer(text="Made by • " + ', '.join([str((await self.bot.fetch_user(i))) for i in self.config['managers']])))
 
     @commands.guild_only()
@@ -40,5 +39,5 @@ class Info(commands.Cog):
     async def invite(self, ctx):
         await ctx.send(embed=discord.Embed(title="Invte me to your server!", description=f"[Click here to invite me!](https://discord.com/api/oauth2/authorize?client_id={self.bot.user.id}&permissions=537152577&scope=bot)", color=discord.Color.green()))
 
-def setup(bot):
-    bot.add_cog(Info(bot))
+async def setup(bot):
+    await bot.add_cog(Info(bot))
