@@ -39,7 +39,7 @@ init(autoreset=True)
 
 config = Data("config").yaml_read()
 
-intents = discord.Intents.default(); intents.members = True
+intents = discord.Intents.all(); intents.members = True
 
 bot = commands.Bot(command_prefix=getPrefix, case_insensitive=True, help_command=None, intents=intents)
 
