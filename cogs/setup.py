@@ -30,10 +30,10 @@ class BumpSetup(commands.Cog):
             return await ctx.send(embed=Embeds(f"This server was already setup! Use `{prefix}delete` to initialize another setup!").error())
 
         embed = discord.Embed(
-            title="🔄 Setting Up...",
+            title=" Setting Up...",
             color=discord.Color.green()
         )
-        embed.set_author(name=str(ctx.author), icon_url=ctx.author.avatar_url_as(static_format="png"))
+        embed.set_author(name=str(ctx.author), icon_url=ctx.author.avatar.url)  # Updated line
 
         embed.description = "Enter your **Server's Description**! Remember that it must be between **10** and **2048** characters long!"
         await ctx.send(embed=embed)
@@ -201,5 +201,5 @@ class BumpSetup(commands.Cog):
             setting_up.remove(ctx.guild)
         except: pass
 
-def setup(bot):
-    bot.add_cog(BumpSetup(bot))
+async def setup(bot):
+    await bot.add_cog(BumpSetup(bot))
