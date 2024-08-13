@@ -25,5 +25,5 @@ class ErrorHandler(commands.Cog):
             await ctx.send(embed=embeds.Embeds("There was an error executing this command.").error(Error=error))
             raise error
 
-def setup(bot):
-    bot.add_cog(ErrorHandler(bot))
+async def setup(bot):
+    await bot.add_cog(ErrorHandler(bot))
