@@ -33,5 +33,5 @@ class SetPrefix(commands.Cog):
         server = Servers(guild.id)
         if server.hasPrefix: server.deletePrefix
 
-def setup(bot):
-    bot.add_cog(SetPrefix(bot))
+async def setup(bot):
+    await bot.add_cog(SetPrefix(bot))
