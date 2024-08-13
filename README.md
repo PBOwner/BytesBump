@@ -1,3 +1,5 @@
+# Original by Nemika Haj was archived and no longer maintained. I have taken up maintaining both this and the server-list
+
 # BytesBump
  A bump bot written in Discord.py!
 
